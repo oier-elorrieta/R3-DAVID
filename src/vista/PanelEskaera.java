@@ -118,7 +118,6 @@ public class PanelEskaera extends JPanel{
 	}
 
 	private void initializeEvents() {
-		this.btnLogging.addActionListener(listenerBotonLogging(this.cpEs));
 		this.combo.addActionListener(listenerCombo(this.cpEs));
 		this.btnAtzera.addActionListener(listenerBotonAtzera(this.cpEs));
 		this.cbBidali.addActionListener(listenerCheckBoxCbBidali(this.cpEs));
@@ -153,14 +152,6 @@ public class PanelEskaera extends JPanel{
 			}
 		};
 
-	}
-
-	private ActionListener listenerBotonLogging(ControladorPanelEskaera cpEs) {
-		return new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				//WIP
-			}
-		};
 	}
 
 	private ActionListener listenerCheckBoxCbBidali(ControladorPanelEskaera cpEs) {

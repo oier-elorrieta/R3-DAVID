@@ -23,10 +23,6 @@ public class ControladorPanelEragiketak {
 		this.vista.mostrarPanel(this.panelEragiketa);
 	}
 	
-	public void accionadoBottonVolverPanelLogging() {
-		//WIP
-	}
-	
 	public void accionadoBottonTicket() {
 		this.controlador.navegarPanelTicket();
 	}
@@ -35,16 +31,9 @@ public class ControladorPanelEragiketak {
 		this.controlador.navegarPanelFactura();
 	}
 	
-	public void accionadoBottonComanda() {
-		//WIP
-	}
-	
 	public void accionadoBottonEskaera() {
 		this.controlador.navegarPanelEscaera();
 	}
 	
-	public void accionadoBottonStock() {
-		//WIP
-	}
 
 }

@@ -90,21 +90,11 @@ public class PanelEragiketak extends JPanel{
 	}
 
 	private void initializeEvents() {
-		this.btnLogging.addActionListener(listenerBotonLogging(this.cpe));
 		this.btnTicket.addActionListener(listenerBotonTicket(this.cpe));
 		this.btnFactura.addActionListener(listenerBotonFactura(this.cpe));
-		this.btnComanda.addActionListener(listenerBotonComanda(this.cpe));
 		this.btnEskaera.addActionListener(listenerBotonEskaera(this.cpe));
-		this.btnStock.addActionListener(listenerBotonStock(this.cpe));
 	}
 
-	private ActionListener listenerBotonLogging(ControladorPanelEragiketak cpe) {
-		return new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				cpe.accionadoBottonVolverPanelLogging();
-			}
-		};
-	}
 	
 	private ActionListener listenerBotonTicket(ControladorPanelEragiketak cpe) {
 		return new ActionListener() {
@@ -122,13 +112,6 @@ public class PanelEragiketak extends JPanel{
 		};
 	}
 	
-	private ActionListener listenerBotonComanda(ControladorPanelEragiketak cpe) {
-		return new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				cpe.accionadoBottonComanda();
-			}
-		};
-	}
 	
 	private ActionListener listenerBotonEskaera(ControladorPanelEragiketak cpe) {
 		return new ActionListener() {
@@ -137,14 +120,5 @@ public class PanelEragiketak extends JPanel{
 			}
 		};
 	}
-	
-	private ActionListener listenerBotonStock(ControladorPanelEragiketak cpe) {
-		return new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				cpe.accionadoBottonStock();
-			}
-		};
-	}
-	
 	
 }

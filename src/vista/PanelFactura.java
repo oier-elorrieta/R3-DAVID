@@ -125,20 +125,11 @@ public class PanelFactura extends JPanel{
 	}
 
 	private void initializeEvents() {
-		this.btnLogging.addActionListener(listenerBotonLogging(this.cpf));
 		this.combo.addActionListener(listenerCombo(this.cpf));
 		this.btnAtzera.addActionListener(listenerBotonAtzera(this.cpf));
 		this.btnSortu.addActionListener(listenerBotonSortu(this.cpf));
 	}
 
-	private ActionListener listenerBotonLogging(ControladorPanelFactura cpf) {
-		return new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-			}
-		};
-	}
-	
 	private ActionListener listenerBotonAtzera(ControladorPanelFactura cpf) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
