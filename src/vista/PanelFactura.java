@@ -134,7 +134,6 @@ public class PanelFactura extends JPanel{
 	private ActionListener listenerBotonLogging(ControladorPanelFactura cpf) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Ejecutando evento Boton Logging");
 				
 			}
 		};
@@ -143,7 +142,6 @@ public class PanelFactura extends JPanel{
 	private ActionListener listenerBotonAtzera(ControladorPanelFactura cpf) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Ejecutando evento Boton Atzera");
 				cpf.accionadoBottonAtzera();
 			}
 		};
@@ -162,9 +160,7 @@ public class PanelFactura extends JPanel{
 	private ActionListener listenerBotonSortu(ControladorPanelFactura cpf) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Ejecutando evento Boton Sortu");
 				if(tfBIzen.getText().isBlank()||tfBAbizen.getText().isBlank()||tfBNif.getText().isBlank()) {
-					System.out.println("hay que rellenar todos los campos");
 					lblError.setVisible(true);
 				}else {
 					lblError.setVisible(false);

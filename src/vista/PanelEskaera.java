@@ -128,12 +128,10 @@ public class PanelEskaera extends JPanel{
 	private ActionListener listenerBotonSortu(ControladorPanelEskaera cpEs) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Ejecutando evento Boton Sortu");
 				if(cbBidali.isSelected()==true) {
 					if(tfDirekzioa.getText().isBlank()) {
 						lblError.setVisible(true);
-						System.out.println("Etxera bildaltzeko denean direkzio sartu behar da");
-					}
+						}
 					else {
 						lblError.setVisible(false);
 						String dir = tfDirekzioa.getText();
@@ -160,8 +158,7 @@ public class PanelEskaera extends JPanel{
 	private ActionListener listenerBotonLogging(ControladorPanelEskaera cpEs) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Ejecutando evento Boton Logging");
-
+				//WIP
 			}
 		};
 	}
@@ -170,10 +167,8 @@ public class PanelEskaera extends JPanel{
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(cbBidali.isSelected()==true) {
-					System.out.println("cb enable");
 					tfDirekzioa.setEnabled(true);
 				}else if(cbBidali.isSelected()==false){
-					System.out.println("cb disenable");
 					tfDirekzioa.setEnabled(false);
 				}
 
@@ -184,7 +179,6 @@ public class PanelEskaera extends JPanel{
 	private ActionListener listenerBotonAtzera(ControladorPanelEskaera cpEs) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Ejecutando evento Boton Atzera");
 				cpEs.accionadoBottonAtzera();
 			}
 		};

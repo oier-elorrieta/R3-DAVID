@@ -3,13 +3,13 @@ package modelo;
 public class Modelo {
 	private bbddSartze bbdd;
 	
-	public Modelo(bbddSartze bbdd) {
-		this.setBbdd(bbdd);
+	public Modelo() {
+		this.setBbdd();
 	}
 	public bbddSartze getBbdd() {
 		return this.bbdd;
 	}
-	public void setBbdd(bbddSartze bbdd) {
-		this.bbdd=bbdd;
+	public void setBbdd() {
+		this.bbdd=new bbddSartze();
 	}
 }

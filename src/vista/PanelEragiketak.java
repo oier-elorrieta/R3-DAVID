@@ -101,7 +101,6 @@ public class PanelEragiketak extends JPanel{
 	private ActionListener listenerBotonLogging(ControladorPanelEragiketak cpe) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Ejecutando evento Boton Logging");
 				cpe.accionadoBottonVolverPanelLogging();
 			}
 		};
@@ -110,7 +109,6 @@ public class PanelEragiketak extends JPanel{
 	private ActionListener listenerBotonTicket(ControladorPanelEragiketak cpe) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Ejecutando evento Boton Ticket");
 				cpe.accionadoBottonTicket();
 			}
 		};
@@ -119,7 +117,6 @@ public class PanelEragiketak extends JPanel{
 	private ActionListener listenerBotonFactura(ControladorPanelEragiketak cpe) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Ejecutando evento Boton Factura");
 				cpe.accionadoBottonFactura();
 			}
 		};
@@ -128,7 +125,6 @@ public class PanelEragiketak extends JPanel{
 	private ActionListener listenerBotonComanda(ControladorPanelEragiketak cpe) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Ejecutando evento Boton Comanda");
 				cpe.accionadoBottonComanda();
 			}
 		};
@@ -137,7 +133,6 @@ public class PanelEragiketak extends JPanel{
 	private ActionListener listenerBotonEskaera(ControladorPanelEragiketak cpe) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Ejecutando evento Boton Eskaera");
 				cpe.accionadoBottonEskaera();
 			}
 		};
@@ -146,7 +141,6 @@ public class PanelEragiketak extends JPanel{
 	private ActionListener listenerBotonStock(ControladorPanelEragiketak cpe) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Ejecutando evento Boton Stock");
 				cpe.accionadoBottonStock();
 			}
 		};

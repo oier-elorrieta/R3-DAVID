@@ -24,33 +24,27 @@ public class ControladorPanelEragiketak {
 	}
 	
 	public void accionadoBottonVolverPanelLogging() {
-		//this.controlador.navegarPanelLogging();
-		System.out.println("WIP");
+		//WIP
 	}
 	
 	public void accionadoBottonTicket() {
-		System.out.println("navegar Panel Ticket");
 		this.controlador.navegarPanelTicket();
 	}
 	
 	public void accionadoBottonFactura() {
-		System.out.println("navegar panel factura");
 		this.controlador.navegarPanelFactura();
 	}
 	
 	public void accionadoBottonComanda() {
-		System.out.println("navegar panel comanda");
-		//this.controlador.navegarPanelLogging();
+		//WIP
 	}
 	
 	public void accionadoBottonEskaera() {
-		System.out.println("navegar panel Eskaera");
 		this.controlador.navegarPanelEscaera();
 	}
 	
 	public void accionadoBottonStock() {
-		System.out.println("navegar panel stock");
-		//this.controlador.navegarPanelLogging();
+		//WIP
 	}
 
 }

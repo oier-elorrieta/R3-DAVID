@@ -93,7 +93,6 @@ public class PanelTicket extends JPanel{
 	private ActionListener listenerBotonSortu(ControladorPanelTicket cpt) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Ejecutando evento Boton Sortu");
 				tpTicket.setText(cpt.accionadoBottonSortu());
 				combo.setEnabled(false);
 				btnSortu.setEnabled(false);
@@ -104,8 +103,7 @@ public class PanelTicket extends JPanel{
 	private ActionListener listenerBotonLogging(ControladorPanelTicket cpt) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Ejecutando evento Boton Logging");
-
+				//WIP
 			}
 		};
 	}
@@ -113,7 +111,6 @@ public class PanelTicket extends JPanel{
 	private ActionListener listenerBotonAtzera(ControladorPanelTicket cpt) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Ejecutando evento Boton Atzera");
 				cpt.accionadoBottonAtzera();
 			}
 		};
