@@ -10,7 +10,8 @@ import controlador.ControladorPanelLogging;
 import javax.swing.JPasswordField;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
-import java.awt.Font;;
+import java.awt.Font;
+import java.awt.Color;;
 
 @SuppressWarnings("serial")
 public class PanelLogging extends JPanel{
@@ -21,9 +22,9 @@ public class PanelLogging extends JPanel{
 	private final JSeparator separator_3 = new JSeparator();
 
 	private JButton btnLogBezero, btnRegister;
-	
-	private JTextField tfBizena;
-	private JPasswordField psBezero;
+	private JLabel lblError;
+	private JTextField tfIzena;
+	private JPasswordField psPasahitza;
 	
 	public PanelLogging(ControladorPanelLogging cpl) {
 		this.cpl = cpl;
@@ -38,27 +39,27 @@ public class PanelLogging extends JPanel{
 		btnRegister.setBounds(250, 219, 120, 20);
 		add(btnRegister);
 //--------------------------------------------------------------------------------------------------------------
-		JLabel lblBezero = new JLabel("Bezero izena");
-		lblBezero.setBounds(120, 35, 120, 14);
-		add(lblBezero);
+		JLabel lblIzena = new JLabel("User izena");
+		lblIzena.setBounds(120, 35, 120, 14);
+		add(lblIzena);
 		
-		tfBizena = new JTextField();
-		tfBizena.setBounds(140, 60, 195, 25);
-		add(tfBizena);
-		tfBizena.setColumns(10);
+		tfIzena = new JTextField();
+		tfIzena.setBounds(140, 60, 195, 25);
+		add(tfIzena);
+		tfIzena.setColumns(10);
 		
-		JLabel lblBPasahitza = new JLabel("Pasahitza");
-		lblBPasahitza.setBounds(120, 115, 115, 14);
-		add(lblBPasahitza);
+		JLabel lblPasahitza = new JLabel("Pasahitza");
+		lblPasahitza.setBounds(120, 115, 115, 14);
+		add(lblPasahitza);
 		
-		psBezero = new JPasswordField();
-		psBezero.setBounds(140, 140, 195, 25);
-		add(psBezero);
+		psPasahitza = new JPasswordField();
+		psPasahitza.setBounds(140, 140, 195, 25);
+		add(psPasahitza);
 
-		JLabel lblBezeroa = new JLabel("Bezeroa");
-		lblBezeroa.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblBezeroa.setBounds(185, 5, 60, 20);
-		add(lblBezeroa);
+		JLabel lblLogging = new JLabel("Logging");
+		lblLogging.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblLogging.setBounds(185, 5, 68, 20);
+		add(lblLogging);
 
 		separator_1.setBounds(0, 30, 225, 7);
 		add(separator_1);
@@ -68,6 +69,13 @@ public class PanelLogging extends JPanel{
 		
 		separator_3.setBounds(0, 270, 450, 2);
 		add(separator_3);
+		
+		lblError = new JLabel("Izena edo pasahitza okerrak dira");
+		lblError.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblError.setForeground(Color.RED);
+		lblError.setBounds(120, 176, 236, 14);
+		lblError.setVisible(false);
+		add(lblError);
 //------------------------------------------------------------------------------------------------------------------	
 		initializeEvents();
 	}
@@ -80,7 +88,12 @@ public class PanelLogging extends JPanel{
 	private ActionListener logging(ControladorPanelLogging cpl) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				cpl.accionadoBottonLogging();
+				String pasahitza =new String(psPasahitza.getPassword());
+				try {
+				cpl.accionadoBottonLogging(tfIzena.getText(),pasahitza);
+				}catch (Exception e) {
+					lblError.setVisible(true);
+				}
 			}
 		};
 	}

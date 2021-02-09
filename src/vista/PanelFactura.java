@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
 import controlador.ControladorPanelFactura;
 
 import javax.swing.JSeparator;
@@ -128,6 +129,15 @@ public class PanelFactura extends JPanel{
 		this.combo.addActionListener(listenerCombo(this.cpf));
 		this.btnAtzera.addActionListener(listenerBotonAtzera(this.cpf));
 		this.btnSortu.addActionListener(listenerBotonSortu(this.cpf));
+		this.btnLogging.addActionListener(listenerBotonLogging(this.cpf));
+	}
+
+	private ActionListener listenerBotonLogging(ControladorPanelFactura cpe) {
+		return new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				cpf.accionadoBottonLogging();
+			}
+		};
 	}
 
 	private ActionListener listenerBotonAtzera(ControladorPanelFactura cpf) {

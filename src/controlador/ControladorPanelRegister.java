@@ -24,16 +24,13 @@ public class ControladorPanelRegister {
 	}
 	
 	public void accionadoBottonRegister() {
-		System.out.println("User berria sortu");
 		this.controlador.navegarPanelLogging();
 	}
 	
 	public void accionadoBottonSortu() {
-		System.out.println("establezimendu berria registratu");
 	}
 	
 	public void accionadoBottonVolverPanelLogging() {
-		System.out.println("logging panelera bueltatu");
 		this.controlador.navegarPanelLogging();
 	}
 

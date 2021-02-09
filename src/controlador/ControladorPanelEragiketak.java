@@ -6,7 +6,6 @@ import vista.Vista;
 
 public class ControladorPanelEragiketak {
 
-	@SuppressWarnings("unused")
 	private Modelo modelo;
 	private Vista vista;
 	private Controlador controlador;
@@ -23,6 +22,10 @@ public class ControladorPanelEragiketak {
 		this.vista.mostrarPanel(this.panelEragiketa);
 	}
 	
+	public void accionadoBottonLogging() {
+		this.controlador.navegarPanelLogging();
+	}
+	
 	public void accionadoBottonTicket() {
 		this.controlador.navegarPanelTicket();
 	}
@@ -33,6 +36,11 @@ public class ControladorPanelEragiketak {
 	
 	public void accionadoBottonEskaera() {
 		this.controlador.navegarPanelEscaera();
+	}
+
+	public String[] konprobatuMota() {
+		String[] establezimendu = this.modelo.getBbdd().getEstablezimendu();
+		return establezimendu;
 	}
 	
 

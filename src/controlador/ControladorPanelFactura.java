@@ -25,6 +25,10 @@ public class ControladorPanelFactura {
 		this.vista.mostrarPanel(this.pfactura);
 	}
 //----------------------------------------------------------------------------------------------------------------------------------------
+	public void accionadoBottonLogging() {
+		this.controlador.navegarPanelLogging();
+	}
+	
 	public void accionadoBottonAtzera() {
 		this.controlador.navegarPanelEragiketa();
 	}

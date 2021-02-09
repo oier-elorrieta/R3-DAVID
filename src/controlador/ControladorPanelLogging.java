@@ -6,6 +6,7 @@ import vista.Vista;
 
 public class ControladorPanelLogging {
 
+	private static final Exception Error = null;
 	@SuppressWarnings("unused")
 	private Modelo modelo;
 	private Vista vista;
@@ -27,8 +28,9 @@ public class ControladorPanelLogging {
 		this.controlador.navegarPanelRegister();
 	}
 	
-	public void accionadoBottonLogging() {
-		this.controlador.navegarPanelEragiketa();
+	public void accionadoBottonLogging(String Izena,String pasahitza) throws Exception {
+		if(this.modelo.getBbdd().balidatuUser(Izena, pasahitza))this.controlador.navegarPanelEragiketa();
+		else throw Error;
 	}
 
 }

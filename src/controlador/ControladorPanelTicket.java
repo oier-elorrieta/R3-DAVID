@@ -25,6 +25,10 @@ public class ControladorPanelTicket {
 		this.vista.mostrarPanel(this.panelTicket);
 	}
 //----------------------------------------------------------------------------------------------------------------------------------------
+	public void accionadoBottonLogging() {
+		this.controlador.navegarPanelLogging();
+	}
+	
 	public void accionadoBottonAtzera() {
 		this.controlador.navegarPanelEragiketa();
 	}

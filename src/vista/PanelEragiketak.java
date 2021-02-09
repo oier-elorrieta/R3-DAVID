@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import controlador.ControladorPanelEragiketak;
 import javax.swing.JSeparator;
+
 import java.awt.Font;;
 
 @SuppressWarnings("serial")
@@ -33,14 +34,17 @@ public class PanelEragiketak extends JPanel{
 
 		btnTicket = new JButton("Ticket");
 		btnTicket.setBounds(50, 87, 120, 20);
+		btnTicket.setVisible(false);
 		add(btnTicket);
 		
 		btnFactura = new JButton("Factura");
 		btnFactura.setBounds(275, 87, 120, 20);
+		btnFactura.setVisible(false);
 		add(btnFactura);
 		
 		btnEskaera = new JButton("Eskaera");
 		btnEskaera.setBounds(50, 185, 120, 20);
+		btnEskaera.setVisible(false);
 		add(btnEskaera);
 		
 		btnStock = new JButton("Stock");
@@ -49,6 +53,7 @@ public class PanelEragiketak extends JPanel{
 		
 		btnComanda = new JButton("Comanda");
 		btnComanda.setBounds(275, 184, 120, 20);
+		btnComanda.setVisible(false);
 		add(btnComanda);
 //-----------------------------------------------------------------------------	
 		JLabel lblEragiketak = new JLabel("Eragiketak");
@@ -86,16 +91,57 @@ public class PanelEragiketak extends JPanel{
 		separator_3.setBounds(0, 270, 450, 2);
 		add(separator_3);
 //--------------------------------------------------------------------------
+		konprobatuMota();
 		initializeEvents();
+	}
+	
+	private void konprobatuMota() {
+		String[] establezimendu = cpe.konprobatuMota();
+		lblNombreUsuario.setText(establezimendu[0]);
+		lblEMota.setText(establezimendu[1]);
+		switch(establezimendu[1]) {
+		case "Bar":
+			Bar();
+			break;
+		case "Cafetegi":
+			cafe();
+			break;
+		case "Jatetxe":
+			jate();
+			break;
+		}
+	}
+	
+	private void jate() {
+		btnTicket.setVisible(true);
+		btnFactura.setVisible(true);
+		btnEskaera.setVisible(true);
+		btnComanda.setVisible(true);
+	}
+
+	private void cafe() {
+		btnTicket.setVisible(true);
+		btnFactura.setVisible(true);
+	}
+
+	private void Bar() {
+	btnTicket.setVisible(true);
 	}
 
 	private void initializeEvents() {
 		this.btnTicket.addActionListener(listenerBotonTicket(this.cpe));
 		this.btnFactura.addActionListener(listenerBotonFactura(this.cpe));
 		this.btnEskaera.addActionListener(listenerBotonEskaera(this.cpe));
+		this.btnLogging.addActionListener(listenerBotonLogging(this.cpe));
 	}
 
-	
+	private ActionListener listenerBotonLogging(ControladorPanelEragiketak cpe) {
+		return new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				cpe.accionadoBottonLogging();
+			}
+		};
+	}
 	private ActionListener listenerBotonTicket(ControladorPanelEragiketak cpe) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

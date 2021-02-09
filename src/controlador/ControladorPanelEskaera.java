@@ -25,6 +25,10 @@ public class ControladorPanelEskaera {
 		this.vista.mostrarPanel(this.pEskaera);
 	}
 //----------------------------------------------------------------------------------------------------------------------------------------	
+	public void accionadoBottonLogging() {
+		this.controlador.navegarPanelLogging();
+	}
+	
 	public void accionadoBottonAtzera() {
 		this.controlador.navegarPanelEragiketa();
 	}
