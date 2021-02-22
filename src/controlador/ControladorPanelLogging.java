@@ -7,7 +7,6 @@ import vista.Vista;
 public class ControladorPanelLogging {
 
 	private static final Exception Error = null;
-	@SuppressWarnings("unused")
 	private Modelo modelo;
 	private Vista vista;
 	private Controlador controlador;

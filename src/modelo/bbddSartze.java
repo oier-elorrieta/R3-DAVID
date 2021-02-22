@@ -1,8 +1,11 @@
 package modelo;
 
+import java.util.ArrayList;
+
 public class bbddSartze {
 	private User[] usuarioak;
 	private Establezimendu[] establezimenduak;
+	private static ArrayList<Eragiketa> eragiketak = new ArrayList<>();
 	private int establezimendu;
 	
 	public bbddSartze() {
@@ -89,10 +92,14 @@ public class bbddSartze {
 		
 		return prezioa;
 	}
+	
 	public String[] getEstablezimendu() {
 		String izena=usuarioak[establezimendu].getIzena();
 		String mota=establezimenduak[establezimendu].getMota();
 		String[] string ={izena,mota};
 		return string;
+	}
+	public static void eragiketakGorde(Eragiketa eragi) {
+		eragiketak.add(eragi);
 	}
 }

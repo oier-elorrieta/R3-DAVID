@@ -33,7 +33,7 @@ public class ControladorPanelTicket {
 		this.controlador.navegarPanelEragiketa();
 	}
 	public String accionadoBottonSortu() {
-		String faktura ="\r-------------------\r";
+		String faktura ="-------------------\r";
 		faktura =metodo.accionadoBotonSortu(faktura);
 		return faktura;
 	}
