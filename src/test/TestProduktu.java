@@ -20,7 +20,7 @@ class TestProduktu {
 	}
 	@Test
 	public void testIzena(){
-		p1.setIzena("wine");
+		p1.setIzena("Wine");
 		String expected = "Wine";
 		String actual = p1.getIzena();
 		assertEquals(expected, actual);
@@ -34,7 +34,7 @@ class TestProduktu {
 	}
 	@Test
 	public void testPreVen(){
-		p1.setPreCom(200);
+		p1.setPreVen(200);
 		int expected = 200;
 		int actual = p1.getPreVen();
 		assertEquals(expected, actual);
@@ -43,7 +43,7 @@ class TestProduktu {
 	public void testMota(){
 		p1.setMota("freskagarri");
 		String expected = "freskagarri";
-		String actual = p1.getIzena();
+		String actual = p1.getMota();
 		assertEquals(expected, actual);
 	}
 	@Test
