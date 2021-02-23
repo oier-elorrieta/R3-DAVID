@@ -3,41 +3,38 @@ package modelo;
 import java.util.ArrayList;
 
 public class bbddSartze {
-	private User[] usuarioak;
-	private Establezimendu[] establezimenduak;
-	private static ArrayList<Eragiketa> eragiketak = new ArrayList<>();
+	private static final Exception Error = null;
+	private ArrayList<User> usuarioak= new ArrayList<>();
+	private ArrayList<Establezimendu> establezimenduak= new ArrayList<>();;
+	private static ArrayList<Eragiketa> eragiketak ;
 	private int establezimendu;
-	
+
 	public bbddSartze() {
 		Produktu[] produktuak=produktuak();
-		usuarioak= usuarioak();
-		establezimenduak=establezimenduak(produktuak);
+		usuarioak();
+		establezimenduak(produktuak);
 	}
-	private Establezimendu[] establezimenduak(Produktu[] produktuak) {
-		Establezimendu[] establezimenduak;
-		Establezimendu e1 =new Establezimendu(produktuak, "elena", "iparAguirre20", "505505505a", "Bar", "Markel");
-		Establezimendu e2 =new Establezimendu(produktuak, "nito", "ekiMartinez21", "050050050b", "Cafetegi", "Gorka");
-		Establezimendu e3 =new Establezimendu(produktuak, "kerry", "hegoGonzalez19", "909909909c", "Jatetxe", "Eneko");
-		Establezimendu e4 =new Establezimendu(produktuak, "kaberga", "mendeTrevilla21", "090090090d", "Bar", "Jon");
-		establezimenduak=new Establezimendu[4];
-		establezimenduak[0]=e1;
-		establezimenduak[1]=e2;
-		establezimenduak[2]=e3;
-		establezimenduak[3]=e4;
-		return establezimenduak;
+	private void establezimenduak(Produktu[] produktuak) {
+		try {
+			sortuEstablezimendu(produktuak, "elena", "iparAguirre20", "505505505a", "Bar", "Markel");
+			sortuEstablezimendu(produktuak, "nito", "ekiMartinez21", "050050050b", "Cafetegi", "Gorka");
+			sortuEstablezimendu(produktuak, "kerry", "hegoGonzalez19", "909909909c", "Jatetxe", "Eneko");
+			sortuEstablezimendu(produktuak, "kaberga", "mendeTrevilla21", "090090090d", "Bar", "Jon");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
-	private User[] usuarioak() {
-		User[] usuarioak;
-		User u1 = new User("markel", "aguirre", "elena", "055505550a", "12");
-		User u2 = new User("gorka", "martinez", "nito", "500050005b", "12");
-		User u3 = new User("eneko", "gonzalez", "kerry", "099909990c", "12");
-		User u4 = new User("jon", "trevilla", "kaberga", "900090009d", "12");
-		usuarioak=new User[4];
-		usuarioak[0] = u1;
-		usuarioak[1] = u2;
-		usuarioak[2] = u3;
-		usuarioak[3] = u4;
-		return usuarioak;
+	private void usuarioak() {
+		try{
+			sortuUser("markel", "aguirre", "elena", "055505550a", "12");
+			sortuUser("gorka", "martinez", "nito", "500050005b", "12");
+			sortuUser("eneko", "gonzalez", "kerry", "099909990c", "12");
+			sortuUser("jon", "trevilla", "kaberga", "900090009d", "12");
+		}catch (Exception e) {
+		}
+
 	}
 	private Produktu[] produktuak() {
 		Produktu[] produktuak;
@@ -54,9 +51,9 @@ public class bbddSartze {
 	}
 	public boolean balidatuUser(String Izena,String pasahitza) {
 		boolean balidatuta = false;
-		for (int i = 0; i < usuarioak.length; i++) {
-			if (usuarioak[i].getIzena().equals(Izena)) {
-				if(usuarioak[i].getPasahitza().equals(pasahitza)) {
+		for (int i = 0; i < usuarioak.size(); i++) {
+			if (usuarioak.get(i).getIzena().equals(Izena)) {
+				if(usuarioak.get(i).getPasahitza().equals(pasahitza)) {
 					establezimendu = i;
 					balidatuta = true;
 				}
@@ -69,7 +66,7 @@ public class bbddSartze {
 		String[] produktuIzenak = new String[4];
 
 		for (int i = 0; i < produktuIzenak.length; i++) {
-			produktuIzenak[i]=establezimenduak[establezimendu].getProduktuak()[i].getIzena();
+			produktuIzenak[i]=establezimenduak.get(establezimendu).getProduktuak()[i].getIzena();
 		}
 
 		return produktuIzenak;
@@ -78,28 +75,42 @@ public class bbddSartze {
 		String[] produktuPrezioak = new String[4];
 
 		for (int i = 0; i < produktuPrezioak.length; i++) {
-			produktuPrezioak[i]=establezimenduak[establezimendu].getProduktuak()[i].getPreVen()+"";
+			produktuPrezioak[i]=establezimenduak.get(establezimendu).getProduktuak()[i].getPreVen()+"";
 		}
 		return produktuPrezioak;
 	}
 	public int produktuPrezioa(String izen) {
 		int prezioa = 0;
-		for (int i = 0; i < establezimenduak[establezimendu].getProduktuak().length; i++) {
-			if(establezimenduak[establezimendu].getProduktuak()[i].getIzena().equals(izen)) {
-				prezioa=establezimenduak[establezimendu].getProduktuak()[i].getPreVen();
+		for (int i = 0; i < establezimenduak.get(establezimendu).getProduktuak().length; i++) {
+			if(establezimenduak.get(establezimendu).getProduktuak()[i].getIzena().equals(izen)) {
+				prezioa=establezimenduak.get(establezimendu).getProduktuak()[i].getPreVen();
 			}
 		}
-		
+
 		return prezioa;
 	}
-	
+
 	public String[] getEstablezimendu() {
-		String izena=usuarioak[establezimendu].getIzena();
-		String mota=establezimenduak[establezimendu].getMota();
-		String[] string ={izena,mota};
-		return string;
+		String izena=usuarioak.get(establezimendu).getIzena();
+		String mota=establezimenduak.get(establezimendu).getMota();
+		String[] strings ={izena,mota};
+		return strings;
 	}
 	public static void eragiketakGorde(Eragiketa eragi) {
 		eragiketak.add(eragi);
+	}
+	public void sortuUser (String izena,String abizena,String EIzena, String nif, String pasahitza) throws Exception {
+		if (izena.equals("")||abizena.equals("")||EIzena.equals("")||nif.equals("")||pasahitza.equals(""))throw Error;
+		else {
+			User u = new User(izena,abizena,EIzena,nif,pasahitza);
+			usuarioak.add(u);
+		}
+	}
+	public void sortuEstablezimendu(Produktu[] produktuak,String izena,String dir,String nif,String mota,String jabe) throws Exception {
+		if (izena.equals("")||dir.equals("")||nif.equals("")||mota.equals("")||jabe.equals(""))throw Error;
+		else {
+			Establezimendu e =new Establezimendu(produktuak,izena,dir,nif,mota,jabe);
+			establezimenduak.add(e);
+		}
 	}
 }
