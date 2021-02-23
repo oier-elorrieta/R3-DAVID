@@ -6,7 +6,7 @@ public class bbddSartze {
 	private static final Exception Error = null;
 	private ArrayList<User> usuarioak= new ArrayList<>();
 	private ArrayList<Establezimendu> establezimenduak= new ArrayList<>();;
-	private static ArrayList<Eragiketa> eragiketak ;
+	private static ArrayList<Eragiketa> eragiketak = new ArrayList<>() ;
 	private int establezimendu;
 
 	public bbddSartze() {

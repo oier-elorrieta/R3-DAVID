@@ -6,7 +6,6 @@ import vista.Vista;
 
 public class ControladorPanelRegister {
 	
-	@SuppressWarnings("unused")
 	private Modelo modelo;
 	private Vista vista;
 	private Controlador controlador;
@@ -28,8 +27,8 @@ public class ControladorPanelRegister {
 		this.controlador.navegarPanelLogging();
 	}
 	
-	public void accionadoBottonSortu(String izena,String dir,String mota,String nif,String Eizena) throws Exception {
-		this.modelo.getBbdd().sortuEstablezimendu(null, izena, dir, nif, mota, Eizena);
+	public void accionadoBottonSortu(String izena,String dir,String nif,String mota,String jabe) throws Exception {
+		this.modelo.getBbdd().sortuEstablezimendu(null, izena, dir, nif, mota, jabe);
 	}
 	
 	public void accionadoBottonVolverPanelLogging() {

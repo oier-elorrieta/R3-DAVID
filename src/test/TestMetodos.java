@@ -34,8 +34,8 @@ class TestMetodos {
 	}
 	@Test
 	public void testAccionadoBotonSortu() {
-		String expected = "\r---------------\r\r-------------------\rtotala : " +(double)0 / 100+"€";
-		String actual = metodo.accionadoBotonSortu("\r---------------\r");
+		String expected = "---------------\r\r-------------------\rtotala : " +(double)0 / 100+"€";
+		String actual = metodo.accionadoBotonSortu("---------------\r");
 		assertEquals(expected, actual);
 	}
 	
