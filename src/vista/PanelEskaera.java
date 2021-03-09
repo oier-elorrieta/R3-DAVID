@@ -7,7 +7,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import controlador.ControladorPanelEskaera;
-
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 import java.awt.Font;
@@ -122,7 +121,17 @@ public class PanelEskaera extends JPanel{
 		this.btnAtzera.addActionListener(listenerBotonAtzera(this.cpEs));
 		this.cbBidali.addActionListener(listenerCheckBoxCbBidali(this.cpEs));
 		this.btnSortu.addActionListener(listenerBotonSortu(this.cpEs));
+		this.btnLogging.addActionListener(listenerBotonLogging(this.cpEs));
 	}
+
+	private ActionListener listenerBotonLogging(ControladorPanelEskaera cpEs) {
+		return new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				cpEs.accionadoBottonLogging();
+			}
+		};
+	}
+
 
 	private ActionListener listenerBotonSortu(ControladorPanelEskaera cpEs) {
 		return new ActionListener() {

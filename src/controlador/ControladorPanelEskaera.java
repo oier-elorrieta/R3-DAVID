@@ -25,17 +25,21 @@ public class ControladorPanelEskaera {
 		this.vista.mostrarPanel(this.pEskaera);
 	}
 //----------------------------------------------------------------------------------------------------------------------------------------	
+	public void accionadoBottonLogging() {
+		this.controlador.navegarPanelLogging();
+	}
+	
 	public void accionadoBottonAtzera() {
 		this.controlador.navegarPanelEragiketa();
 	}
 	
 	public String accionadoBottonSortu(String dir) {
-		String faktura ="Direkzio : "+dir+"\r-------------------\r";
+		String faktura ="Direkzio : "+dir+"\retxera bidali\r-------------------\r";
 		faktura =metodo.accionadoBotonSortu(faktura);
 		return faktura;
 	}
 	public String accionadoBottonSortu() {
-		String faktura ="\r-------------------\r";
+		String faktura ="establezimenduan artu\r-------------------\r";
 		faktura =metodo.accionadoBotonSortu(faktura);
 		return faktura;
 	}

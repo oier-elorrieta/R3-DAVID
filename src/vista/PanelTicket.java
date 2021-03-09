@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
 import controlador.ControladorPanelTicket;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
@@ -87,6 +88,15 @@ public class PanelTicket extends JPanel{
 		this.combo.addActionListener(listenerCombo(this.cpt));
 		this.btnAtzera.addActionListener(listenerBotonAtzera(this.cpt));
 		this.btnSortu.addActionListener(listenerBotonSortu(this.cpt));
+		this.btnLogging.addActionListener(listenerBotonLogging(this.cpt));
+	}
+
+	private ActionListener listenerBotonLogging(ControladorPanelTicket cpt) {
+		return new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				cpt.accionadoBottonLogging();
+			}
+		};
 	}
 
 	private ActionListener listenerBotonSortu(ControladorPanelTicket cpt) {

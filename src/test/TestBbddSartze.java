@@ -33,5 +33,14 @@ private static bbddSartze bbdd;
 		int actual = bbdd.produktuPrezioa("coca cola");
 		assertEquals(expected, actual);
 	}
+	
+	@Test
+	public void testBalidatuUser() {
+		assertTrue(bbdd.balidatuUser("markel", "12"));
+	}
+	@Test
+	public void testBalidatuUser2() {
+		assertFalse(bbdd.balidatuUser("markel", "21"));
+	}
 
 }

@@ -46,5 +46,26 @@ class TestTicket {
 		assertEquals(expected, t1.getFec());
 		
 	}
+	@SuppressWarnings("static-access")
+	@Test
+	public void TestNTransakzio() {
+		int expected = 2;
+		assertEquals(expected, t1.getnTrasakzio());
+	}
+	@SuppressWarnings("static-access")
+	@Test
+	public void TestNTransakzio2() {
+		int expected = 3;
+		t1.setnTrasakzio(3);
+		assertEquals(expected, t1.getnTrasakzio());
+	}
+	@Test
+	public void TestNtrans() {
+		int expected = 5;
+		t1.setNtrans(5);
+		assertEquals(expected, t1.getNtrans());
+		
+	}
+	
 
 }

@@ -37,6 +37,15 @@ public class Metodos {
 			}
 		}
 		Eragiketa =Eragiketa+"\r-------------------\rtotala : "+(double)totala/100+"€";
+		sortuEragiketa(eragiketa, totala);
 		return Eragiketa;
+	}
+	private void sortuEragiketa(String eragiketa,int total) {
+		String[] eragiketaZatitu=eragiketa.split("\r");
+		int length=eragiketaZatitu.length;
+		if(length==1) bbddSartze.eragiketakGorde(new Ticket(proKop, total));
+		else if(length==2) bbddSartze.eragiketakGorde(new Eskaera(proKop, "establezimenduan", total));
+		else if(length==3) bbddSartze.eragiketakGorde(new Eskaera(proKop, eragiketaZatitu[1].split(":")[1], total));
+		else if(length==4) bbddSartze.eragiketakGorde(new Faktura(proKop,  eragiketaZatitu[0].split(":")[1],  eragiketaZatitu[1].split(":")[1],  eragiketaZatitu[2].split(":")[1], total));
 	}
 }

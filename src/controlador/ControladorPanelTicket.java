@@ -25,11 +25,15 @@ public class ControladorPanelTicket {
 		this.vista.mostrarPanel(this.panelTicket);
 	}
 //----------------------------------------------------------------------------------------------------------------------------------------
+	public void accionadoBottonLogging() {
+		this.controlador.navegarPanelLogging();
+	}
+	
 	public void accionadoBottonAtzera() {
 		this.controlador.navegarPanelEragiketa();
 	}
 	public String accionadoBottonSortu() {
-		String faktura ="\r-------------------\r";
+		String faktura ="-------------------\r";
 		faktura =metodo.accionadoBotonSortu(faktura);
 		return faktura;
 	}
