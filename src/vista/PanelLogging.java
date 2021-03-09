@@ -23,7 +23,7 @@ public class PanelLogging extends JPanel{
 
 	private JButton btnLogBezero, btnRegister;
 	private JLabel lblError;
-	private JTextField tfIzena;
+	private JTextField tfDNI;
 	private JPasswordField psPasahitza;
 	
 	public PanelLogging(ControladorPanelLogging cpl) {
@@ -39,14 +39,14 @@ public class PanelLogging extends JPanel{
 		btnRegister.setBounds(250, 219, 120, 20);
 		add(btnRegister);
 //--------------------------------------------------------------------------------------------------------------
-		JLabel lblIzena = new JLabel("User izena");
-		lblIzena.setBounds(120, 35, 120, 14);
-		add(lblIzena);
+		JLabel lblDNI = new JLabel("User DNI");
+		lblDNI.setBounds(120, 35, 120, 14);
+		add(lblDNI);
 		
-		tfIzena = new JTextField();
-		tfIzena.setBounds(140, 60, 195, 25);
-		add(tfIzena);
-		tfIzena.setColumns(10);
+		tfDNI = new JTextField();
+		tfDNI.setBounds(140, 60, 195, 25);
+		add(tfDNI);
+		tfDNI.setColumns(10);
 		
 		JLabel lblPasahitza = new JLabel("Pasahitza");
 		lblPasahitza.setBounds(120, 115, 115, 14);
@@ -90,7 +90,7 @@ public class PanelLogging extends JPanel{
 			public void actionPerformed(ActionEvent arg0) {
 				String pasahitza =new String(psPasahitza.getPassword());
 				try {
-				cpl.accionadoBottonLogging(tfIzena.getText(),pasahitza);
+				cpl.accionadoBottonLogging(tfDNI.getText(),pasahitza);
 				}catch (Exception e) {
 					lblError.setVisible(true);
 				}

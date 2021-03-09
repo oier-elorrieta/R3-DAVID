@@ -33,8 +33,8 @@ public class PanelRegister extends JPanel{
 	private final JSeparator separator_1 = new JSeparator();
 	private final JSeparator separator_2 = new JSeparator();
 	private final JSeparator separator_3 = new JSeparator();
-	private JTextField tfUnif;
-	private JTextField tfUEstablezimendu;
+	private JTextField tfDNI;
+	private JTextField tfENIF;
 
 	public PanelRegister(ControladorPanelRegister cpr) {
 
@@ -82,23 +82,23 @@ public class PanelRegister extends JPanel{
 		lblBPasahitza.setBounds(10, 155, 60, 15);
 		add(lblBPasahitza);
 
-		tfUnif = new JTextField();
-		tfUnif.setColumns(10);
-		tfUnif.setBounds(95, 125, 120, 20);
-		add(tfUnif);
+		tfDNI = new JTextField();
+		tfDNI.setColumns(10);
+		tfDNI.setBounds(95, 125, 120, 20);
+		add(tfDNI);
 
-		JLabel lblNifU = new JLabel("NIF");
-		lblNifU.setBounds(10, 125, 60, 20);
-		add(lblNifU);
+		JLabel lblDNI = new JLabel("NIF");
+		lblDNI.setBounds(10, 125, 60, 20);
+		add(lblDNI);
 
-		JLabel lblEIzenaU = new JLabel("E.Izena");
-		lblEIzenaU.setBounds(10, 95, 60, 20);
-		add(lblEIzenaU);
+		JLabel lblENIF = new JLabel("E.NIF");
+		lblENIF.setBounds(10, 95, 60, 20);
+		add(lblENIF);
 
-		tfUEstablezimendu = new JTextField();
-		tfUEstablezimendu.setColumns(10);
-		tfUEstablezimendu.setBounds(95, 95, 120, 20);
-		add(tfUEstablezimendu);
+		tfENIF = new JTextField();
+		tfENIF.setColumns(10);
+		tfENIF.setBounds(95, 95, 120, 20);
+		add(tfENIF);
 
 		pfBezero = new JPasswordField();
 		pfBezero.setBounds(95, 155, 120, 20);
@@ -223,7 +223,7 @@ public class PanelRegister extends JPanel{
 			public void actionPerformed(ActionEvent arg0) {
 				String pasahitza = new String(pfBezero.getPassword());
 				try {
-					cpr.accionadoBottonRegister(tfIzena.getText(),tfAbizena.getText(),tfUEstablezimendu.getText(),tfUnif.getText(),pasahitza);
+					cpr.accionadoBottonRegister(tfIzena.getText(),tfAbizena.getText(),tfENIF.getText(),tfDNI.getText(),pasahitza);
 				} catch (Exception e) {
 					lblErrorUser.setVisible(true);
 				}

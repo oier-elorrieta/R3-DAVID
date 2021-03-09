@@ -1,6 +1,7 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.sql.*;
 
 public class bbddSartze {
 	private static final Exception Error = null;
@@ -8,12 +9,43 @@ public class bbddSartze {
 	private ArrayList<Establezimendu> establezimenduak= new ArrayList<>();;
 	private static ArrayList<Eragiketa> eragiketak = new ArrayList<>() ;
 	private int establezimendu;
+	private Connection bbdd;
+    private static final String URL = "jdbc:mysql://localhost:33060/hosteleria";
+    private static final String USUARIO = "root";
+    private static final String PASSW = "elorrieta";
 
 	public bbddSartze() {
+		bbdd=conexion();
+		prueba();
 		Produktu[] produktuak=produktuak();
 		usuarioak();
 		establezimenduak(produktuak);
 	}
+	private Connection conexion() {
+		 Connection conexion = null;        
+	        try {
+	            conexion = DriverManager.getConnection(URL, USUARIO, PASSW);
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        } 
+	        return conexion;
+	    }
+	private void prueba() {
+		Statement s;
+		ResultSet rs;
+		try {
+		s = bbdd.createStatement();
+		rs = s.executeQuery ("select * from establezimendu");
+		while (rs.next())
+		{
+		    System.out.println (rs.getCharacterStream (1) );
+		}
+		}catch (Exception e) {
+			
+		}
+		
+	}
+	
 	private void establezimenduak(Produktu[] produktuak) {
 		try {
 			sortuEstablezimendu(produktuak, "elena", "iparAguirre20", "505505505a", "Bar", "Markel");
@@ -21,7 +53,6 @@ public class bbddSartze {
 			sortuEstablezimendu(produktuak, "kerry", "hegoGonzalez19", "909909909c", "Jatetxe", "Eneko");
 			sortuEstablezimendu(produktuak, "kaberga", "mendeTrevilla21", "090090090d", "Bar", "Jon");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
